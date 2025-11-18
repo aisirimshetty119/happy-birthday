@@ -1,0 +1,46 @@
+/* Basic & theme */
+body { margin: 0; font-family: 'Poppins', sans-serif; }
+.animated-bg {
+  background: linear-gradient(135deg,#ffe1f0,#ffd4e8,#ffe9f7);
+  background-size: 600% 600%;
+  animation: bgMove 12s ease infinite;
+}
+@keyframes bgMove { 0%{background-position:0% 50%} 50%{background-position:100% 50%} 100%{background-position:0% 50%} }
+
+.container { max-width: 760px; margin: 28px auto; padding: 20px; text-align: center; }
+
+.title-glow { color: #ff4f9a; text-shadow: 0 0 14px #ff9fc4; font-size: 28px; margin: 8px 0; }
+.subtitle { color: #7a4a6f; margin-bottom: 12px; }
+.hint { color: #a56b95; font-size: 13px; margin-top: 10px; }
+
+/* inputs & buttons */
+input { width: 88%; padding: 12px; border-radius: 12px; border: 1px solid #f2cfe0; margin: 8px 0; display:block; margin-left:auto; margin-right:auto; }
+button { padding: 12px 18px; border-radius: 12px; border: none; background: #ff88c2; color: white; cursor: pointer; }
+.neon-btn { box-shadow: 0 0 10px #ff88c2, 0 0 20px #ff4f9a; }
+
+/* fade/animations */
+.soft-fade { animation: fadeIn 0.9s ease both; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+
+/* slideshow */
+.slideshow { position: relative; margin-top: 12px; }
+.zoom-slideshow img { width: 100%; border-radius: 14px; box-shadow: 0 10px 40px rgba(0,0,0,0.08); animation: slowZoom 6s infinite alternate; }
+@keyframes slowZoom { from { transform: scale(1); } to { transform: scale(1.04); } }
+.slide-controls { position: relative; margin-top: 8px; display:flex; justify-content:center; gap:12px; }
+.nav-btn { background: white; border: 2px solid #ff88c2; color: #ff4f9a; padding: 8px 12px; border-radius: 10px; cursor: pointer; }
+
+/* caption */
+.caption-glow { margin-top: 10px; font-size: 18px; color:#c82f6a; text-shadow: 0 0 8px #ffcfe4; }
+
+/* game area & hearts */
+.game-area { height: 400px; background: rgba(255,255,255,0.9); border-radius: 12px; position: relative; overflow: hidden; margin-top:12px; }
+.heart { position: absolute; font-size: 44px; cursor: pointer; user-select:none; transform: translate(-50%,-50%); transition: transform .12s ease; }
+.heart:active { transform: scale(1.25) translate(-50%,-50%); }
+
+/* surprises */
+.surprise-box { background: white; padding: 16px; margin: 10px 0; border-radius: 12px; cursor:pointer; box-shadow: 0 8px 24px rgba(0,0,0,0.06); display:inline-block; min-width:220px; }
+.shiny:hover { transform: scale(1.03); box-shadow: 0 14px 36px rgba(255,120,170,0.16); }
+
+/* small helpers */
+.small { padding: 8px 12px; border-radius: 8px; border: 1px solid #f0d3e5; background: white; }
+.full-canvas { position: fixed; left:0; top:0; width:100%; height:100%; pointer-events:none; z-index:0; }
