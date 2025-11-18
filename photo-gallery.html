@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Our Photos</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="animated-bg">
+  <audio id="sing" controls preload="none">
+    <source src="music/singing.mp3" type="audio/mpeg" />
+  </audio>
+
+  <div class="container soft-fade">
+    <h1 class="title-glow">Our Memories ❤️</h1>
+
+    <div class="slideshow zoom-slideshow">
+      <img id="galleryPic" src="photos/Pic1.jpg" alt="photo" />
+      <p id="galleryCaption" class="caption-glow"></p>
+      <div class="slide-controls">
+        <button class="nav-btn" onclick="prevGallery()">◀</button>
+        <button class="nav-btn" onclick="nextGallery()">▶</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
