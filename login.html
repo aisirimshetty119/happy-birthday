@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Login — Happy Birthday</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="animated-bg">
+  <canvas id="floatingHearts" class="full-canvas"></canvas>
+
+  <!-- Background music file (use the exact filename you uploaded in music/) -->
+  <audio id="bgm" loop>
+    <source src="music/Lover Song Download Mp3 Pagalworld Ringtone - MobCup.Com.Co.mp" type="audio/mpeg" />
+  </audio>
+
+  <div class="container login-box soft-fade">
+    <h1 class="title-glow">Hello muddu ❤️</h1>
+    <p class="subtitle">Enter your nickname & password</p>
+
+    <input id="username" placeholder="Nickname" />
+    <input id="password" placeholder="Password" />
+    <button onclick="login()" class="btn neon-btn">Login</button>
+
+    <p class="hint">Hint: try <b>muddu</b> / <b>muddu</b></p>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    // Floating heart particles (visual only)
+    const canvas = document.getElementById("floatingHearts");
+    const ctx = canvas.getContext("2d");
+    function fitCanvas(){ canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+    fitCanvas(); window.addEventListener('resize', fitCanvas);
+    let hearts = [];
+    function createHeart(){ hearts.push({ x: Math.random()*canvas.width, y: canvas.height + 20, size: Math.random()*12+10, speed: Math.random()*1.2+0.6, alpha: Math.random()*0.5+0.5 }); }
+    function drawHearts(){
+      ctx.clearRect(0,0,canvas.width,canvas.height);
+      hearts.forEach((h,i)=>{
+        ctx.fillStyle = `rgba(255,80,150,${h.alpha})`;
+        ctx.font = `${h.size}px serif`;
+        ctx.fillText('❤', h.x, h.y);
+        h.y -= h.speed;
+        h.x += Math.sin(h.y/50) * 0.4;
+        if(h.y < -30) hearts.splice(i,1);
+      });
+      requestAnimationFrame(drawHearts);
+    }
+    setInterval(createHeart, 220);
+    drawHearts();
+  </script>
+</body>
+</html>
