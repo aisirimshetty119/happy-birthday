@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Heart Game</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="animated-bg game-bg">
+  <audio id="bgm" loop>
+    <source src="music/Lover Song Download Mp3 Pagalworld Ringtone - MobCup.Com.Co.mp" type="audio/mpeg" />
+  </audio>
+
+  <canvas id="confetti"></canvas>
+
+  <div class="container soft-fade">
+    <h1 class="title-glow">Collect my hearts ❤️</h1>
+    <p>Tap the floating hearts to reach <strong>10</strong> and unlock a surprise!</p>
+
+    <div id="gameArea" class="game-area"></div>
+
+    <p style="margin-top:12px">Score: <span id="score">0</span>/10</p>
+    <div style="margin-top:12px"><button onclick="resetGame()" class="small">Reset</button></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
